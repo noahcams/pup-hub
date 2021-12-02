@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
+
+:host {
+  display: block;
+}
+
+label {
+  font-size: large;
+  font-weight: bold;
+}
+
+select {
+  font-size: large;
+  font-family: 'Fuzzy Bubbles', cursive;
+  background-color: bisque;
+  border-radius: 0.15rem;
+}

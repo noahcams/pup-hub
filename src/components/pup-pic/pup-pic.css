@@ -1,0 +1,25 @@
+img {
+  width: 25vw;
+  margin: 1rem;
+  border: 0.2rem solid rgb(223, 182, 130);
+  padding: auto;
+  -webkit-transition: width 1s, height 1s;
+  transition: width 1s, height 1s;
+}
+
+img:hover {
+  width: 27vw;
+}
+
+/* .link {
+  text-decoration: none;
+  color: black;
+  background-color: bisque;
+  padding: 0.2rem;
+  border-radius: 0.22rem;
+  border: 1px solid black;
+}
+
+.link:hover {
+  background-color: rgb(248, 236, 221);
+} */
