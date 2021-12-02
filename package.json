@@ -1,5 +1,6 @@
 {
   "name": "pup-hub",
+  "homepage": "https://noahcams.github.io/pup-hub",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -15,6 +16,8 @@
     "loader/"
   ],
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
@@ -22,7 +25,8 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@stencil/core": "2.11.0"
+    "@stencil/core": "2.11.0",
+    "gh-pages": "^3.2.3"
   },
   "devDependencies": {
     "@types/jest": "^26.0.24",
