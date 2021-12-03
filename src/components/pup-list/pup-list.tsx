@@ -11,7 +11,7 @@ export class PupList {
   render() {
     return (
       <Host class="container">
-        {this.dogs.map((dog, i) => (
+        {this.dogs && this.dogs.map((dog, i) => (
           <pup-pic dogURL={dog} key={i} />
         ))}
       </Host>
