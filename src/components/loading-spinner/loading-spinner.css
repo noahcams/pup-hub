@@ -1,0 +1,7 @@
+:host {
+  display: block;
+}
+
+#loading {
+  width: 10vw; /* not being applied... */
+}

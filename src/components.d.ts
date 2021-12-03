@@ -6,6 +6,8 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface LoadingSpinner {
+    }
     interface PupApp {
     }
     interface PupList {
@@ -16,6 +18,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLLoadingSpinnerElement extends Components.LoadingSpinner, HTMLStencilElement {
+    }
+    var HTMLLoadingSpinnerElement: {
+        prototype: HTMLLoadingSpinnerElement;
+        new (): HTMLLoadingSpinnerElement;
+    };
     interface HTMLPupAppElement extends Components.PupApp, HTMLStencilElement {
     }
     var HTMLPupAppElement: {
@@ -35,12 +43,15 @@ declare global {
         new (): HTMLPupPicElement;
     };
     interface HTMLElementTagNameMap {
+        "loading-spinner": HTMLLoadingSpinnerElement;
         "pup-app": HTMLPupAppElement;
         "pup-list": HTMLPupListElement;
         "pup-pic": HTMLPupPicElement;
     }
 }
 declare namespace LocalJSX {
+    interface LoadingSpinner {
+    }
     interface PupApp {
     }
     interface PupList {
@@ -50,6 +61,7 @@ declare namespace LocalJSX {
         "dogURL"?: string;
     }
     interface IntrinsicElements {
+        "loading-spinner": LoadingSpinner;
         "pup-app": PupApp;
         "pup-list": PupList;
         "pup-pic": PupPic;
@@ -59,6 +71,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "loading-spinner": LocalJSX.LoadingSpinner & JSXBase.HTMLAttributes<HTMLLoadingSpinnerElement>;
             "pup-app": LocalJSX.PupApp & JSXBase.HTMLAttributes<HTMLPupAppElement>;
             "pup-list": LocalJSX.PupList & JSXBase.HTMLAttributes<HTMLPupListElement>;
             "pup-pic": LocalJSX.PupPic & JSXBase.HTMLAttributes<HTMLPupPicElement>;

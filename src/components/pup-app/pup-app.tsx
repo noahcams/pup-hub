@@ -7,18 +7,17 @@ import { Component, State, Host, h } from '@stencil/core';
 })
 export class PupApp {
   @State() dogs: string[];
-  @State() breed: string;
+  @State() breed: string = 'affenpinscher';
   @State() breeds: object;
 
   async componentWillRender() {
-    const breedsRes = await fetch('https://dog.ceo/api/breeds/list/all');
-    const breedsData = await breedsRes.json();
-    this.breeds = breedsData.message;
-    this.breed = Object.keys(this.breeds)[0];
-
     const res = await fetch(`https://dog.ceo/api/breed/${this.breed}/images/random/10`);
     const data = await res.json();
     this.dogs = data.message;
+
+    const breedsRes = await fetch('https://dog.ceo/api/breeds/list/all');
+    const breedsData = await breedsRes.json();
+    this.breeds = breedsData.message;
   }
 
   /** Sets state to be the selected breed */
@@ -43,7 +42,7 @@ export class PupApp {
             ))}
           </select>
         </div>
-        <pup-list dogs={this.dogs} />
+        {this.dogs ? <pup-list dogs={this.dogs} /> : <loading-spinner />}
       </Host>
     );
   }
