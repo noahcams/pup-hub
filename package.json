@@ -25,11 +25,11 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@stencil/core": "2.11.0",
-    "gh-pages": "^3.2.3"
+    "@stencil/core": "2.11.0"
   },
   "devDependencies": {
     "@types/jest": "^26.0.24",
+    "gh-pages": "^3.2.3",
     "jest": "^26.6.3",
     "jest-cli": "^26.6.3",
     "puppeteer": "^10.0.0"
