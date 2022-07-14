@@ -1,4 +1,4 @@
-# pup-app
+# loading-spinner
 
 
 
@@ -7,18 +7,15 @@
 
 ## Dependencies
 
-### Depends on
+### Used by
 
-- [pup-list](../pup-list)
-- [loading-spinner](../loading-spinner)
+ - [pup-app](../pup-app)
 
 ### Graph
 ```mermaid
 graph TD;
-  pup-app --> pup-list
   pup-app --> loading-spinner
-  pup-list --> pup-pic
-  style pup-app fill:#f9f,stroke:#333,stroke-width:4px
+  style loading-spinner fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
