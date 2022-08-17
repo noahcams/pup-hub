@@ -11,13 +11,17 @@ export class PupApp {
   @State() breeds: object;
 
   async componentWillRender() {
-    const res = await fetch(`https://dog.ceo/api/breed/${this.breed}/images/random/10`);
-    const data = await res.json();
-    this.dogs = data.message;
+    try {
+      const res = await fetch(`https://dog.ceo/api/breed/${this.breed}/images/random/10`);
+      const data = await res.json();
+      this.dogs = data.message;
 
-    const breedsRes = await fetch('https://dog.ceo/api/breeds/list/all');
-    const breedsData = await breedsRes.json();
-    this.breeds = breedsData.message;
+      const breedsRes = await fetch('https://dog.ceo/api/breeds/list/all');
+      const breedsData = await breedsRes.json();
+      this.breeds = breedsData.message;
+    } catch (err) {
+      console.log('Please check your internet connection');
+    }
   }
 
   /** Sets state to be the selected breed */
